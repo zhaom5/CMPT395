@@ -21,6 +21,7 @@ con.connect(function(err) {
 		      ['Sarah001', 'sarahpw', "facilitator", 0, "N/A", "780)555-9874", "her@email.com"]];
 	
 			// executes the query to the database.
+			// result is what comes back from the query. can use dot notation for fields.
 		    con.query(sql, [values], function (err, result) {
 			        if (err) throw err;
 			        console.log("Number of records inserted: " + result.affectedRows);
@@ -68,8 +69,6 @@ con.connect(function(err) {
 			      
 	// dont need this connect, but it differes from above. ??
 	// NOT sure this works.
-	con.connect(function(err) {
-        if (err) throw err;
         // ? is like %s in C. 
         var sql = "SELECT * FROM settings";
         con.query(sql, function (err, result, fields) {
